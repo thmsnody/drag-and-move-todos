@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+input,
+.input,
+textarea,
+.textarea {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+button,
+.btn {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  &:active {
+    outline: 1px solid black;
+  }
+}
+button:disabled,
+button[disabled] {
+  cursor: not-allowed;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 5em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  background-color: #ddd;
+  overflow-x: hidden;
+
+  h1 {
+    text-align: center;
+    span {
+      display: inline-block;
+    }
+  }
+  label {
+    display: flex;
+    min-width: 300px;
+    &:has(input:focus) {
+      border-radius: 5px;
+      outline: 1px solid black;
+    }
+    input {
+      width: 100%;
+      padding: 0.3em 0.7em;
+      border: 1px solid black;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      border-right: none;
+      &:focus {
+        border-right: 1px solid black;
+      }
+    }
+    button {
+      padding: 0.3em 0.7em;
+      border-radius: 0 5px 5px 0;
+      outline: none;
+    }
+  }
+  .columns-box {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    @media (width < 800px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .column {
+    width: 30%;
+    @media (width < 800px) {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+  .column-title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+  }
+  ul {
+    padding: 1em 1em 0.5em;
+    background-color: #666;
+    border-radius: 15px;
+  }
+  // ! must need className for fixing some bugs
+  li.item {
+    margin-bottom: 0.5em;
+    padding: 0.3em 0.7em;
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    span {
+      margin-left: auto;
+      display: inline-block;
+      // color: coral;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+  .dragging {
+    background-color: coral;
+  }
+}
